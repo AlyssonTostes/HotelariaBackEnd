@@ -3,6 +3,7 @@ package br.com.guest.resource;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ import br.com.guest.repository.GuestRepository;
  * @version 1
  * @since 1.0.0
  */
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(value="/api")
 public class GuestResource {
@@ -112,6 +114,7 @@ public class GuestResource {
 	 * @version 1
 	 * @since 1.0.0
 	 */
+	@CrossOrigin(origins = "*")
 	@DeleteMapping(value="/hospede")
 	public void delete(@RequestBody Guest guest) {
 		guestRepository.delete(guest);
